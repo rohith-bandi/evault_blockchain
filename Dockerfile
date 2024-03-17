@@ -17,8 +17,3 @@ RUN cd test-network && \
     ./network.sh createChannel -c mychannel && \
     ./network.sh deployCC -ccn basic -ccp asset-transfer-basic/chaincode-javascript/ -ccl javascript
 
-# Expose any ports required by your application
-EXPOSE 3000
-
-# Command to start your application
-CMD ["node", "index.js"]
