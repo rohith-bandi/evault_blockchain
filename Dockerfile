@@ -8,7 +8,10 @@ RUN apk update && apk add --no-cache curl git
 # Set the working directory in the container
 WORKDIR /usr/src/app
 
-# Execute the network setup commands
+# Copy the necessary files into the container
+COPY . .
+
+# Run the network setup commands using Docker RUN instructions
 RUN cd test-network && \
     ./network.sh up -ca -s couchdb && \
     ./network.sh createChannel -c mychannel && \
