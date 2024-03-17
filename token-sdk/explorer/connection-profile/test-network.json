@@ -1,0 +1,64 @@
+{
+	"name": "test-network",
+	"version": "1.0.0",
+	"client": {
+		"tlsEnable": true,
+		"adminCredential": {
+			"id": "exploreradmin",
+			"password": "exploreradminpw"
+		},
+		"enableAuthentication": true,
+		"organization": "Org1MSP",
+		"connection": {
+			"timeout": {
+				"peer": {
+					"endorser": "300"
+				},
+				"orderer": "300"
+			}
+		}
+	},
+	"channels": {
+		"mychannel": {
+			"peers": {
+				"peer0.org1.example.com": {}
+			}
+		}
+	},
+	"organizations": {
+		"Org1MSP": {
+			"mspid": "Org1MSP",
+			"adminPrivateKey": {
+				"path": "/tmp/crypto/peerOrganizations/org1.example.com/users/Admin@org1.example.com/msp/keystore/e7fcedf88c1347b26a809db8d95a0079c6db3e7fb8e802898c1025c158f05d5b_sk"
+			},
+			"peers": ["peer0.org1.example.com"],
+			"signedCert": {
+				"path": "/tmp/crypto/peerOrganizations/org1.example.com/users/Admin@org1.example.com/msp/signcerts/cert.pem"
+			}
+		},
+		"Org2MSP": {
+			"mspid": "Org2MSP",
+			"adminPrivateKey": {
+				"path": "/tmp/crypto/peerOrganizations/org2.example.com/users/Admin@org2.example.com/msp/keystore/09ab20c880ea2be474a07f5804bedeaee793a3f9c5c5db0e3e374daf34777638_sk"
+			},
+			"peers": ["peer0.org2.example.com"],
+			"signedCert": {
+				"path": "/tmp/crypto/peerOrganizations/org2.example.com/users/Admin@org2.example.com/msp/signcerts/cert.pem"
+			}
+		}
+	},
+	"peers": {
+		"peer0.org1.example.com": {
+			"tlsCACerts": {
+				"path": "/tmp/crypto/peerOrganizations/org1.example.com/peers/peer0.org1.example.com/tls/ca.crt"
+			},
+			"url": "grpcs://peer0.org1.example.com:7051"
+		},
+		"peer0.org2.example.com": {
+			"tlsCACerts": {
+				"path": "/tmp/crypto/peerOrganizations/org2.example.com/peers/peer0.org2.example.com/tls/ca.crt"
+			},
+			"url": "grpcs://peer0.org2.example.com:9051"
+		}
+	}
+}
