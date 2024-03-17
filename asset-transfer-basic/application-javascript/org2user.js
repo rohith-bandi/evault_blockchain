@@ -301,7 +301,8 @@ module.exports = {
     getLawyerUsers,
     getJudgeUsers,
     forgotPassword,
-    sendVerificationCode
+    sendVerificationCode ,
+    createAdmin
 };
 
 
