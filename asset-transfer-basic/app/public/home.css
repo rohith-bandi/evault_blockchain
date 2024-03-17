@@ -1,0 +1,59 @@
+body{
+  overflow-x: hidden;
+}
+/* Custom section styles */
+section {
+  margin: 70px 0;
+  padding: 10px;
+  background-color: #FAF0E6;
+  margin-left: 3%;
+  margin-right: 20%;
+  border: 2px solid rgb(141, 139, 139);
+  border-radius: 30px 15px;
+}
+
+@keyframes text-move {
+  0% {
+      transform: translateX(100%);
+  }
+
+  100% {
+      transform: translateX(-100%);
+  }
+}
+
+/* Section content styles */
+section ul {
+  color: black;
+  font-size: 22px;
+  list-style-type: disc;
+  margin-left: 20px;
+}
+
+section li {
+  padding: 5px;
+}
+
+section h2 {
+  color: #333;
+  font-size: 40px;
+}
+
+/* Override Bootstrap styles for the custom background color */
+.navbar {
+  background-color: #1e90ff;
+  margin-bottom: 15px;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+  color: white;
+  
+}
+
+/* Additional styles for better visibility */
+.navbar-brand {
+  color: white;
+  
+}
+
+
