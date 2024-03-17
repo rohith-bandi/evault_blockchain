@@ -326,6 +326,7 @@ module.exports = {
     countRolesInBothWallets,
     sendVerificationCode,
     forgotPassword ,
+    createAdmin
 };
 
 
