@@ -2,8 +2,6 @@
 FROM docker:latest
 
 # Install any additional dependencies required for your network setup
-# For example, if your network setup requires curl and git
-# Install additional dependencies
 RUN apk update && apk add --no-cache \
     curl \
     git \
@@ -27,19 +25,8 @@ RUN cd test-network && \
     cd asset-transfer-basic/application-javascript && \
     npm install && \
     npm init && \
-    npm i express && \
-    npm i fabric-network && \
-    npm i path && \
-    npm i body-parser && \
-    npm i fs && \
-    npm i express-session && \
-    npm i multer && \
-    npm i ipfs-api && \
-    npm i bcrypt && \
-    npm i fabric-ca-client && \
-    npm i nodemailer && \
-    node -e "require('./org1user').createAdmin()"
-    node -e "require('./org2user').createAdmin()"
+    npm i express fabric-network path body-parser fs express-session multer ipfs-api bcrypt fabric-ca-client nodemailer && \
+    node -e "require('./org1user').createAdmin(); require('./org2user').createAdmin()"
 
 # Expose necessary ports if needed
 EXPOSE 3000
