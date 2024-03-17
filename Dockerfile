@@ -9,7 +9,7 @@ RUN apk update && apk add --no-cache curl git
 WORKDIR /usr/src/app
 
 # Execute the network setup commands
-RUN cd test-network
+RUN cd test-network && \
     ./network.sh up -ca -s couchdb && \
     ./network.sh createChannel -c mychannel && \
     ./network.sh deployCC -ccn basic -ccp asset-transfer-basic/chaincode-javascript/ -ccl javascript
