@@ -1,0 +1,72 @@
+<!-- login.ejs -->
+
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+<head>
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0">
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="/login.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&display=swap" rel="stylesheet">
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+  <title>evault</title>
+</head>
+<body>
+  <div class="header-container">
+    <div class="row justify-content-between align-items-center">
+        <div class="col-md-2 text-left">
+            <img src="./images/logo.png" alt="Image Description" style="max-width: 60%;" class="float-left">
+        </div>
+        <div class="col-md-3 text-left">
+            <h1><strong>EVAULT</strong></h1>
+            <h3><strong>Make Your Privacy as Security</strong></h3>
+        </div>
+        <div class="col-md-2 text-left">
+            <img src="./images/court.jpg" alt="Image Description" style="max-width: 100%;" class="float-right">
+        </div>
+        <div class="col-md-3 text-right">
+            <h2 id="date-time"></h2>
+        </div>
+        <div class="col-md-2 text-right">
+            <img src="./images/logo1.png" alt="Image Description" style="max-width: 60%;" class="float-right">
+        </div>
+    </div>
+</div>
+  <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar ftco-navbar-light" id="ftco-navbar">
+    <div class="collapse navbar-collapse" id="ftco-nav">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item cta"><a href="/" class="nav-link" style="font-size: 20px;"> Home </a></li>
+      </ul>
+    </div>
+  </nav>
+  <div class="main">
+    
+    <div class="lcontainer a-container" >
+      <form class="form">
+        <h2 class="form_title title">Sign In</h2>
+        <h4><a href="/admindash">Login to Admin</a></h4>
+        <h4><a href="/judgedash">Login to Judge</a></h4>
+        <h4><a href="/lawyerdash">Login to Lawyer</a></h4>
+        <h4><a href="/clientdash">Login to Client</a></h4>
+        <a class="form__link" href="/forgot">Forgot password?</a>
+        <button class="form__button button submit" type="reset">SIGN IN</button>
+      </form>
+    </div>
+
+
+    <div class="switch" id="switch-cnt">
+      <div class="switch__circle"></div>
+      <div class="switch__circle switch__circle--t"></div>
+      <div class="switch__container" id="switch-c1">
+        <img src="/images/hello.jpeg" alt="Image Description" style="max-width: 100%;" class="float-right">
+        <a href="/signup"><button class="switch__button button switch-btn">SIGN UP</button></a>
+      </div>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.6/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="/main.js"></script>
+</body>
+</html>

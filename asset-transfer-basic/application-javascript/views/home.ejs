@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>evault</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="/home.css">
+    <link rel="stylesheet" type="text/css" href="/style.css">
+
+
+</head>
+
+<body>
+    <div class="header-container">
+        <div class="row justify-content-between align-items-center">
+            <div class="col-md-2 text-left">
+                <img src="./images/logo.png" alt="Image Description" style="max-width: 60%;" class="float-left">
+            </div>
+            <div class="col-md-3 text-left">
+                <h1><strong>EVAULT</strong></h1>
+                <h3><strong>Make Your Privacy as Security</strong></h3>
+            </div>
+            <div class="col-md-2 text-left">
+                <img src="./images/court.jpg" alt="Image Description" style="max-width: 100%;" class="float-right">
+            </div>
+            <div class="col-md-3 text-right">
+                <h2 id="date-time"></h2>
+            </div>
+            <div class="col-md-2 text-right">
+                <img src="./images/logo1.png" alt="Image Description" style="max-width: 60%;" class="float-right">
+            </div>
+        </div>
+    </div>
+
+    <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar ftco-navbar-light bg" id="ftco-navbar">
+        <div class="collapse navbar-collapse" id="ftco-nav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item"><a href="/" class="nav-link" style="font-size: 20px;">HOME</a></li>
+                <li class="nav-item"><a href="#about" class="nav-link" style="font-size: 20px;">ABOUT US</a></li>
+                <li class="nav-item"><a href="#services" class="nav-link" style="font-size: 20px;">SERVICES</a></li>
+                <li class="nav-item"><a href="#features" class="nav-link" style="font-size: 20px;">FEATURES</a></li>
+                <li class="nav-item"><a href="/ppt" class="nav-link" style="font-size: 20px;">PPT</a></li>
+                <li class="nav-item"><a href="#contact" class="nav-link" style="font-size: 20px;">CONTACT</a></li>
+                <li class="nav-item cta"><a href="/login" class="nav-link" style="font-size: 20px;">LOGIN/SIGNUP</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div>
+		<marquee behavior="scroll" direction="left" scrollamount="5" width="100%" >
+			<a href="/notice" style="font-size:20px; color:red " >
+				<strong><%= notice %></strong>
+			</a>
+		</marquee>
+	</div>
+	
+
+    <section id="about">
+        <h2>About Us</h2>
+        <ul>
+            <li>Pioneering blockchain solutions for secure and transparent legal records management.</li>
+            <li>Expertise in crafting user-friendly interfaces for seamless document interaction.</li>
+            <li>Strong commitment to privacy through robust access controls and encryption.</li>
+            <li>Seamless integration with existing legal databases for enhanced interoperability.</li>
+            <li>Scalable systems designed to adapt to evolving technological landscapes.</li>
+            <li>Future-ready innovation for sustainable and impactful legal technology solutions.</li>
+        </ul>
+    </section>
+
+    <section id="services">
+        <h2>Services</h2>
+        <ul>
+            <li>Blockchain-based eVault development for legal records.</li>
+            <li>Intuitive user interfaces for easy document management.</li>
+            <li>Privacy-focused access controls, encryption, and authentication.</li>
+            <li>Seamless integration with existing legal databases.</li>
+            <li>Scalable systems adaptable to future changes and upgrades.</li>
+            <li>Comprehensive business planning for market impact and sustainability.</li>
+        </ul>
+    </section>
+
+    <section id="features">
+        <h2>Features</h2>
+        <ul>
+            <li>Pioneering secure blockchain solutions.</li>
+            <li>Expertise in user-friendly interfaces.</li>
+            <li>Strong privacy commitment with access controls.</li>
+            <li>Seamless integration with legal databases.</li>
+            <li>Scalable systems for evolving technology.</li>
+            <li>Future-ready innovation for impactful legal solutions.</li>
+        </ul>
+    </section>
+
+    <section id="contact">
+        <h2>Contact</h2>
+        <div>
+            <ul>
+                <li>Email: <a href="mailto:evaultg122@gmail.com">evaultg122@gmail.com</a></li>
+                <li>Phone: 8247647131</li>
+                <li>Address: Hyderabad ,Telangana  , India</li>
+            </ul>
+        </div>
+    </section>
+
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.6/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/main.js"></script>
+    <script>
+        // Prevent navigation back to the error page
+        history.pushState(null, null, location.href);
+        window.onpopstate = function () {
+            history.go(1);
+        };
+    </script>
+</body>
+
+</html>

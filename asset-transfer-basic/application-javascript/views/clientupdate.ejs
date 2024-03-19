@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>evault</title>
+</head>
+
+<body>
+    <div class="header-container">
+        <div class="row justify-content-between align-items-center">
+            <div class="col-md-2 text-left">
+                <img src="./images/logo.png" alt="Image Description" style="max-width: 60%;" class="float-left">
+            </div>
+            <div class="col-md-3 text-left">
+                <h1><strong>EVAULT</strong></h1>
+                <h3><strong>Make Your Privacy as Security</strong></h3>
+            </div>
+            <div class="col-md-2 text-left">
+                <img src="./images/court.jpg" alt="Image Description" style="max-width: 100%;" class="float-right">
+            </div>
+            <div class="col-md-3 text-right">
+                <h2 id="date-time"></h2>
+            </div>
+            <div class="col-md-2 text-right">
+                <img src="./images/logo1.png" alt="Image Description" style="max-width: 60%;" class="float-right">
+            </div>
+        </div>
+    </div>
+    <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar ftco-navbar-light" id="ftco-navbar">
+        <div class="collapse navbar-collapse" id="ftco-nav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item cta"><a href="/logout" class="nav-link" style="font-size: 15px;">Logout</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="sidebar">
+        <div class="logo-details">
+            <img src="images/band.png" alt="Logo Image" class="logo_img">
+            <span class="logo_name">E-Vault</span>
+        </div>
+        <ul class="nav-links">
+            <li>
+                <a href="clientdash">
+                    <i class='bx bx-grid-alt'></i>
+                    <span class="link_name">Dashboard</span>
+                  </a>
+                </li> 
+            <li>
+                <a href="clientupdate">
+                    <i class='bx bx-edit'></i>
+                    <span class="link_name">Update Case File</span>
+                </a>
+            </li>
+            <li>
+                <a href="clientadddoc">
+                    <i class='bx bx-edit'></i>
+                    <span class="link_name">Add Document</span>
+                </a>
+            </li>
+        
+            <li>
+                <a href="clientview">
+                    <i class='bx bx-list-ul'></i>
+                    <span class="link_name">View all Cases</span>
+                </a>
+            </li> 
+
+        </ul>
+    </div>
+    <section class="home-section">
+        <div class="form-header">
+            <h2 id="form-title"><strong>UPDATE CASE FILE</strong></h2>
+        </div>
+       <div class="form-box">
+        <form >
+            <div class="form-group">
+                <label for="recordName">Record Name:</label>
+                <select class="form-select" id="recordName" name="recordName" aria-label="Default select example" style="background-color: white; width:100%; height:50px" required>
+                                <option value="select your record" ></option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="Password" name="Password" required>
+            </div>
+            <div class="form-group">
+                <label for="fileUpload">Updated File:</label>
+                <label class="file-upload">
+                    <i class="fas fa-cloud-upload-alt"></i> Upload File
+                    <input type="file" id="fileUpload" name="myfile" accept=".pdf"  required>
+                    <p>Note : Only PDF files are accepted</p>
+                </label>
+            </div>
+            <div class="form-group buttons">
+                <button type="reset" >Submit</button>
+                <button type="reset">Reset</button>
+            </div>
+        </form>
+       </div>
+    </section>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.6/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="main.js"></script>
+</body>
+
+</html>
+

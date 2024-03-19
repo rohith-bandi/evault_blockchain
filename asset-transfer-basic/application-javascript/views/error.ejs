@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            text-align: center;
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 40px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            animation: bounce 1s ease-in-out infinite alternate;
+            width: 500px;
+        }
+        @keyframes bounce {
+            0% {
+                transform: translateY(-5px);
+            }
+            100% {
+                transform: translateY(5px);
+            }
+        }
+        h1 {
+            color: #e91e63;
+            margin-bottom: 20px;
+            font-size: 36px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        p {
+            font-size: 18px;
+            color: #333;
+            margin-bottom: 30px;
+        }
+        a {
+            color: #fff;
+            text-decoration: none;
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #e91e63;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        a:hover {
+            background-color: #c2185b;
+        }
+        .symbol {
+            font-size: 100px;
+            margin-bottom: 20px;
+            color: #e91e63;
+            animation: rotate 2s linear infinite;
+        }
+        @keyframes rotate {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+        .animated {
+            animation: pulse 1s ease-in-out infinite;
+        }
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.1);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+    </style>
+    <script>
+        // Redirect to home page after 5 seconds
+        setTimeout(function() {
+            window.location.href = "/";
+        }, 5000);
+    </script>
+</head>
+<body>
+    <div class="container animated">
+        <div class="symbol">🚨</div>
+        <h1>Error</h1>
+        <p><%= error %></p>
+        <p>You will be redirected to the homepage shortly...</p>
+        <a href="/">Go to Home</a>
+    </div>
+</body>
+<script>
+    // Prevent navigation back to the error page
+    history.pushState(null, null, location.href);
+    window.onpopstate = function () {
+        history.go(1);
+    };
+</script>
+</html>

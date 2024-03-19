@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>evault</title>
+    <style>
+
+        .table-box{
+
+            margin:60px;
+
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+            white-space: nowrap; /* Prevent text from wrapping */
+            overflow: hidden; /* Hide content that overflows */
+            text-overflow: ellipsis; /* Display an ellipsis (...) when content overflows */
+            max-width: 200px; /* Set a maximum width for each cell */
+            cursor: pointer; /* Add cursor pointer for clickable cells */
+        }
+
+        th {
+            background-color: #f2f2f2;
+            position: sticky;
+            top: 0;
+        }
+
+        
+
+        thead th {
+            position: -webkit-sticky;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background-color: #f2f2f2;
+        }
+
+        tbody {
+            display: block;
+            overflow-y: auto;
+            max-height: 400px; /* Adjust the height as needed */
+        }
+
+        tbody td, tbody th {
+            width: 100%;
+        }
+
+        tr {
+            display: table;
+            width: 100%;
+            table-layout: fixed;
+        }
+
+        .search-container {
+            margin-bottom: 20px;
+        }
+
+        .search-input {
+            padding: 8px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        /* Add style for tooltip */
+        .tooltip {
+            visibility: hidden;
+            width: 300px;
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            border-radius: 5px;
+            padding: 5px;
+            position: absolute;
+            z-index: 1;
+        }
+
+        /* Show tooltip on hover */
+        td:hover .tooltip {
+            visibility: visible;
+        }
+
+        td:hover  {
+            color: #ff5733; /* Change to your desired color */
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="header-container">
+        <div class="row justify-content-between align-items-center">
+            <div class="col-md-2 text-left">
+                <img src="./images/logo.png" alt="Image Description" style="max-width: 60%;" class="float-left">
+            </div>
+            <div class="col-md-3 text-left">
+                <h1><strong>EVAULT</strong></h1>
+                <h3><strong>Make Your Privacy as Security</strong></h3>
+            </div>
+            <div class="col-md-2 text-left">
+                <img src="./images/court.jpg" alt="Image Description" style="max-width: 100%;" class="float-right">
+            </div>
+            <div class="col-md-3 text-right">
+                <h2 id="date-time"></h2>
+            </div>
+            <div class="col-md-2 text-right">
+                <img src="./images/logo1.png" alt="Image Description" style="max-width: 60%;" class="float-right">
+            </div>
+        </div>
+    </div>
+    <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar ftco-navbar-light" id="ftco-navbar">
+        <div class="collapse navbar-collapse" id="ftco-nav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item cta"><a href="/logout" class="nav-link" style="font-size: 15px;">Logout</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="sidebar">
+        <div class="logo-details">
+            <!-- <i class='bx bxl-c-plus-plus'></i> -->
+            <img src="images/band.png" alt="Logo Image" class="logo_img">
+            <span class="logo_name">E-Vault</span>
+        </div>
+        <ul class="nav-links">
+            <li>
+                <a href="/admindash" >
+                    <i class='bx bx-grid-alt'></i>
+                    <span class="link_name">Dashboard</span>
+                </a>
+            </li>
+            <li>
+                <a href="/adminusers">
+                    <i class='bx bx-user'></i>
+                    <span class="link_name">View Users</span>
+                </a>
+            </li>
+            <li>
+                <a href="/adminrecords">
+                    <i class='bx bx-folder-open' ></i>
+                    <span class="link_name">view Records</span>
+                </a>
+            </li>
+            <li>
+                <a href="/adminnote">
+                    <i class='bx bx-bell'></i>
+                    <span class="link_name">Set Notice</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <section class="home-section">
+        <div class="table-box">
+
+        <h2>Users Table</h2>
+
+        <div class="search-container">
+            <label for="search">Search:</label>
+            <input type="text" id="search" placeholder="Search Username" class="search-input" oninput="filterTable()">
+        </div>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Username</th>
+                        <th>Certificate</th>
+                        <th>Private Key</th>
+                        <th>MSP ID</th>
+                        <th>Type</th>
+                        <th>Role</th>
+                        <th>Password</th>
+                        <th>Email</th>
+                    </tr>
+                </thead>
+                <tbody>
+                        <tr>
+                            <td></td>
+                            <td class="tooltip-trigger"></td>
+                            <td class="tooltip-trigger"></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td class="tooltip-trigger"></td>
+                            <td class="tooltip-trigger"></td>
+                        </tr>
+                   
+                </tbody>
+            </table>
+      
+      <div>  
+    </section>
+    <!-- JavaScript for tooltip -->
+    <script>
+        // Get all elements with the class "tooltip-trigger"
+        var tooltipTriggers = document.querySelectorAll('.tooltip-trigger');
+
+        // Add click event listener to each tooltip trigger
+        tooltipTriggers.forEach(function (trigger) {
+            trigger.addEventListener('click', function () {
+                // Get the text content of the clicked cell
+                var content = trigger.textContent || trigger.innerText;
+
+                // Create a prompt-like box to show the total content
+                var response = prompt('Total Content:', content);
+                if (response !== null) {
+                    // Do something with the user's response if needed
+                    console.log('User responded:', response);
+                }
+            });
+        });
+
+        function filterTable() {
+            var input, filter, table, tr, td, i, txtValue;
+            input = document.getElementById("search");
+            filter = input.value.toUpperCase();
+            table = document.querySelector("table");
+            tr = table.getElementsByTagName("tr");
+            for (i = 0; i < tr.length; i++) {
+                td = tr[i].getElementsByTagName("td")[0];
+                if (td) {
+                    txtValue = td.textContent || td.innerText;
+                    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                        tr[i].style.display = "";
+                    } else {
+                        tr[i].style.display = "none";
+                    }
+                }
+            }
+        }
+    </script>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.6/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="main.js"></script>
+</body>
+
+</html>
