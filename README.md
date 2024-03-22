@@ -51,7 +51,7 @@ This project aims to develop a `blockchain-based` eVault system for legal record
 
 ```
 
-- Sometimes the link may not work in some devices for that you have to open the link in other devices and copy the script . Then run the script in your device . For running script file :
+- Sometimes the link may not work in some devices . So you have to open the link in other devices and copy the script and then run the script in your device . For running script file :
 
 ```bash
   chmod +x filename.sh
@@ -63,7 +63,7 @@ This project aims to develop a `blockchain-based` eVault system for legal record
 
 - Change the configuration of all core.yaml files from LevelDB to CouchDB. 
 
-- In test-network directory , change the Database option to couchdb in network.config file .
+- In test-network directory , change the database option to couchdb in network.config file .
 
 ## Starting the fabric-network :
 ```bash
@@ -88,7 +88,7 @@ sudo bash install.sh
 ipfs init
 ipfs daemon
 ```
-- Command for converting pdf to hash : 
+- Command for converting file to hash : 
 ```bash
 ipfs add path/to/file
 ```
