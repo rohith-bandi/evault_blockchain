@@ -2,12 +2,12 @@
 ----------------------------------------------
 
 
-Overview
+##Overview
 ---------
 This project aims to develop a blockchain-based eVault system for legal records, leveraging Hyperledger technology. The system ensures security, transparency, and accessibility for all stakeholders involved in legal proceedings. It allows for storing, managing, and sharing legal records securely and efficiently while integrating with existing legal databases and case management systems.
 
 
-Features
+##Features
 ---------
 Blockchain Platform: Utilizes Hyperledger for building the eVault system.
 Smart Contracts: Manages access, permissions, and transactions securely.
@@ -18,7 +18,7 @@ Integration: Seamlessly integrates with existing legal databases and case manage
 Scalability: Designed to be scalable and adaptable for future upgrades.
 
 
-Stack
+##Stack
 -------
 Frontend: HTML, CSS, JavaScript
 Backend: Node.js, Express
@@ -26,7 +26,7 @@ Blockchain: Hyperledger
 Authentication: Digital signatures
 
 
-Setup Instructions
+##Setup Instructions
 -------------------
 Clone Repository: git clone .
 Install Dependencies:
@@ -38,7 +38,7 @@ Start Frontend:
 Open index.html in a web browser or deploy frontend separately as needed.
 
 
-Folder Structure
+##Folder Structure
 -----------------
 /backend: Contains backend Node.js files.
 /frontend: Includes frontend HTML, CSS, and JavaScript files.
