@@ -112,16 +112,16 @@ sudo ./network.sh deployCC -ccn basic -ccp ../asset-transfer-basic/chaincode-jav
  npm start
 ```
 ## Web-Interfaces for admin :
-### Portainer :  127.0.0.1:9000
+### Portainer :  http://localhost/127.0.0.1:9000
 - Install Docker interface Portainer with the following commands:
 ```bash
 docker volume create portainer_data
 docker run -d -p 9000:9000 -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data --name portainer portainer/portainer 
 ```
-### CouchDB   :  127.0.0.1:5984 
+### CouchDB   :  http://localhost/127.0.0.1:5984/_utils 
 - CouchDB is automatically installed using Docker during the network setup, and CouchDB containers will also be managed by Docker. The default username is `admin`, and the password is `adminpw`.
 
-### Hyperledger Explorer : 127.0.0.1:8081
+### Hyperledger Explorer : http://localhost/127.0.0.1:8081
 - Install Hyperledger Explorer with the following commands:
 ```bash
 cd path/to/fabric/fabric-samples/token-sdk/explorer
