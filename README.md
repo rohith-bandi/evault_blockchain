@@ -1,7 +1,7 @@
 # Blockchain-based eVault for Legal Records
 
 ## Introduction
-This project aims to develop a blockchain-based eVault system for legal records, leveraging Hyperledger technology. The system ensures security, transparency, and accessibility for all stakeholders involved in legal proceedings. It allows for storing, managing, and sharing legal records securely and efficiently while integrating with existing legal databases and case management systems.
+- This project aims to develop a blockchain-based eVault system for legal records, leveraging Hyperledger technology. The system ensures security, transparency, and accessibility for all stakeholders involved in legal proceedings. It allows for storing, managing, and sharing legal records securely and efficiently while integrating with existing legal databases and case management systems.
 
 ## Features
 - **Smart Contracts**: Manages access, permissions, and transactions securely.
@@ -31,8 +31,34 @@ This project aims to develop a blockchain-based eVault system for legal records,
 - Jq
 - Docker and Docker-compose
 
-## Installation of Hyperledger Fabric
-Hyperledger Fabric is more compatible with Linux. Therefore, I used Linux Ubuntu OS. Run the following command to install Hyperledger Fabric:
+## IPFS Network:
+- Installation Commands:
+```bash
+ docker pull ipfs/go-ipfs
+ docker run -d --name=ipfs_host ipfs/go-ipfs:latest
+ docker exec -it ipfs_host /bin/sh
+ ipfs init
+ ipfs daemon
+
+```
+- Command for converting file to hash : 
+```bash
+ipfs add path/to/file
+```
+- Command for retrieving the file from hash :
+```bash
+ipfs get [hash]
+```
+- Command to extract content from hash :
+```bash
+ipfs cat [hash]
+```
+
+## Deploying the Application :
+### Manual Setup:
+#### Installation of Hyperledger Fabric :
+
+- Hyperledger Fabric is more compatible with Linux. Therefore, I used Linux Ubuntu OS. Run the following command to install Hyperledger Fabric:
 
 ```bash
 curl -sSLO https://raw.githubusercontent.com/hyperledger/fabric/main/scripts/install-fabric.sh && chmod +x install-fabric.sh
@@ -45,13 +71,13 @@ curl -sSLO https://raw.githubusercontent.com/hyperledger/fabric/main/scripts/ins
 ./install-fabric.sh
 ```
 
-## Connecting the CouchDB :
+#### Connecting the CouchDB :
 
 - Change the configuration of all `core.yaml` files from LevelDB to CouchDB in peer section. 
 
 - In the `test-network` directory, change the database option to `couchdb` in the `network.config` file.
 
-## Starting the fabric-network :
+#### Starting the fabric-network :
 ```bash
 cd path/to/fabric-samples/test-network
 ./network.sh down
@@ -59,46 +85,31 @@ sudo ./network.sh up -s couchdb
 sudo ./network.sh createChannel -c mychannel 
 sudo ./network.sh deployCC -ccn basic -ccp ../asset-transfer-basic/chaincode-javascript -ccl javascript
 ```
-
-## IPFS Network:
-- Installation Commands:
+#### Starting the application :
+- Before starting the application, set up the folders like `application-javascript`, `chaincode-javascript` and `test-application`. Modify these files as per your requirements. In `application-javascript`and then follow these commands:
 ```bash
-curl -LO https://dist.ipfs.io/go-ipfs/v0.11.0/go-ipfs_v0.11.0_linux-amd64.tar.gz
-tar xvfz go-ipfs_v0.11.0_linux-amd64.tar.gz
-cd go-ipfs
-sudo bash install.sh 
-ipfs init
-ipfs daemon
-```
-- Command for converting file to hash : 
-```bash
-ipfs add path/to/file
-```
-- Command for retriving the file from hash :
-```bash
-ipfs get [hash]
-```
-- Command to extract content from hash :
-```bash
-ipfs cat [hash]
-```
-
-## Deploying the Application :
-### Manual Setup:
-- Before starting the application, set up the folders like `application-javascript`, `chaincode-javascript`, `test-application`. If you clone this repository, you can start from the `fabric-network`. Modify the files as per your requirements. In `application-javascript`, run these commands:
-```bash
-  npm init
-  npm i
-  npm start
+ cd path/to/evault_blockchain/asset-transfer-basic/application-javascript
+ npm init
+ npm i
+ npm start
 ```
 
 ### Cloning the Repository:
+#### Starting the fabric-network :
 ```bash
-  git clone https://github.com/rohith-bandi/evault_blockchain
-  cd path/to/evault_blockchain/asset-transfer-basic/application-javascript
-  npm init
-  npm i
-  npm start
+git clone https://github.com/rohith-bandi/evault_blockchain
+cd path/to/fabric-samples/test-network
+./network.sh down
+sudo ./network.sh up -s couchdb
+sudo ./network.sh createChannel -c mychannel 
+sudo ./network.sh deployCC -ccn basic -ccp ../asset-transfer-basic/chaincode-javascript -ccl javascript
+```
+#### Starting the application :
+```bash
+ cd path/to/evault_blockchain/asset-transfer-basic/application-javascript
+ npm init
+ npm i
+ npm start
 ```
 ## Web-Interfaces for admin :
 ### Portainer :  127.0.0.1:9000
