@@ -103,7 +103,7 @@ ipfs cat path/to/file
 
 ## Deploying the Application :
 
-Before starting the application , you have to setup the folders like  application-javascript , chaincode-javascript , test-application . `If you clone this respiratory , Then you can just start from fabric-network` . Modify the files as per your requirements . In application-javascript run this commands :
+Before starting the application , you have to setup the folders like  application-javascript , chaincode-javascript , test-application . `If you clone this repository , Then you can just start from fabric-network` . Modify the files as per your requirements . In application-javascript run this commands :
 ```bash
   npm init
   npm i 
