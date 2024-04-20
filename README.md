@@ -15,7 +15,7 @@
 - **Integration**: Seamlessly integrates with existing legal databases and case management systems.
 
 ## Tech Stack
-- **Client**: HTML, CSS, JavaScript
+- **Client**: EJS , CSS, JavaScript
 - **Server**: Node, Express
 - **Blockchain**: Hyperledger Fabric
 - **Database**: CouchDB
@@ -150,4 +150,4 @@ sudo apt-get install apache2
 
 ## 🔗 Link
 
- - [ Project UI Link ](https://evault-61qg.onrender.com)
+ - [ Static Mock-up ](https://evault-61qg.onrender.com)
