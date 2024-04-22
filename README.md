@@ -86,7 +86,7 @@ sudo ./network.sh createChannel -c mychannel
 sudo ./network.sh deployCC -ccn basic -ccp ../asset-transfer-basic/chaincode-javascript -ccl javascript
 ```
 #### Starting the application :
-- Before starting the application, set up the folders like `application-javascript`, `chaincode-javascript` and `test-application`. Modify these files as per your requirements. In `application-javascript`and then follow these commands:
+- Before starting the application, set up the folders like `application-javascript`, `chaincode-javascript` and `test-application`. Modify these files as per your requirements and also modify the wallet.js in node modules to store the user information as you want . In `application-javascript`and then follow these commands:
 ```bash
  cd path/to/evault_blockchain/asset-transfer-basic/application-javascript
  npm init
@@ -105,6 +105,7 @@ sudo ./network.sh createChannel -c mychannel
 sudo ./network.sh deployCC -ccn basic -ccp ../asset-transfer-basic/chaincode-javascript -ccl javascript
 ```
 #### Starting the application :
+- Before starting the application, set up the folders like `application-javascript`, `chaincode-javascript` and `test-application`. Modify these files as per your requirements and also modify the wallet.js in node modules to store the user information as you want . In `application-javascript`and then follow these commands:
 ```bash
  cd path/to/evault_blockchain/asset-transfer-basic/application-javascript
  npm init
