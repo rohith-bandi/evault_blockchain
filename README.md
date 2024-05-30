@@ -151,4 +151,4 @@ sudo apt-get install apache2
 
 ## 🔗 Link
 
- - [ Static Mock-up ](https://evault-61qg.onrender.com)
+ - [ Static Mock-up ](https://evault-ui.onrender.com)
